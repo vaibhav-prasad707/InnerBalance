@@ -1,0 +1,147 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-Help Guide</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <h1>Self-Help Guide</h1>
+</header>
+
+<nav>
+  <ul>
+    <nav>
+        <ul>
+          <li><a href="#" onclick="toggleContent('section1')">Topic 1 <i id="icon1" class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#" onclick="toggleContent('section2')">Topic 2 <i id="icon2" class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#" onclick="toggleContent('section3')">Topic 3 <i id="icon3" class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#" onclick="toggleContent('section4')">Topic 4 <i id="icon4" class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#" onclick="toggleContent('section5')">Topic 5 <i id="icon5" class="fas fa-chevron-down"></i></a></li>
+        
+        </ul>
+      </nav>
+
+  </ul>
+</nav>
+
+<main>
+  <section id="section1" style="display: none;">
+    <h2>Topic 1</h2>
+    <p>This is the content for Topic 1.</p>
+  </section>
+
+  <section id="section2" style="display: none;">
+    <h2>Topic 2</h2>
+    <p>This is the content for Topic 2.</p>
+  </section>
+
+  <section id="section3" style="display: none;">
+    <h2>Topic 3</h2>
+    <p>This is the content for Topic 3.</p>
+  </section>
+
+  <section id="section4" style="display: none;">
+    <h2>Topic 4</h2>
+    <p>This is the content for Topic 4.</p>
+  </section>
+
+  <section id="section5" style="display: none;">
+    <h2>Topic 5</h2>
+    <p>This is the content for Topic 5.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2024 Self-Help Guide</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-Help Guide</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <h1>Self-Help Guide</h1>
+</header>
+
+<nav>
+  <ul>
+    <li>
+      <a href="#" onclick="toggleContent('section1')">Topic 1 <i id="icon1" class="fas fa-chevron-down"></i></a>
+      <section id="section1" style="display: none;">
+        <h2>Topic 1</h2>
+        <p>This is the content for Topic 1.</p>
+        <iframe width="854" height="480" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/BvpmZktlBFs?autoplay=1&amp;start=0&amp;rel=0"></iframe>
+      </section>
+    </li>
+    <li>
+      <a href="#" onclick="toggleContent('section2')">Topic 2 <i id="icon2" class="fas fa-chevron-down"></i></a>
+      <section id="section2" style="display: none;">
+        <h2>Topic 2</h2>
+        <p>This is the content for Topic 2.</p>
+      </section>
+    </li>
+    <li>
+      <a href="#" onclick="toggleContent('section3')">Topic 3 <i id="icon3" class="fas fa-chevron-down"></i></a>
+      <section id="section3" style="display: none;">
+        <h2>Topic 3</h2>
+        <p>This is the content for Topic 3.</p>
+      </section>
+    </li>
+    <li>
+      <a href="#" onclick="toggleContent('section4')">Topic 4 <i id="icon4" class="fas fa-chevron-down"></i></a>
+      <section id="section4" style="display: none;">
+        <h2>Topic 4</h2>
+        <p>This is the content for Topic 4.</p>
+      </section>
+    </li>
+    <li>
+      <a href="#" onclick="toggleContent('section5')">Topic 5 <i id="icon5" class="fas fa-chevron-down"></i></a>
+      <section id="section5" style="display: none;">
+        <h2>Topic 5</h2>
+        <p>This is the content for Topic 5.</p>
+      </section>
+    </li>
+    <!-- Add more topics as needed -->
+  </ul>
+</nav>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<footer>
+  <p> 2024 Self-Help Guide</p>
+  <button id="backButton" onclick="window.location.href = 'resource1.html'">Back</button>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function toggleContent(sectionId) {
+  var section = document.getElementById(sectionId);
+  if (section.style.display === "none") {
+    section.style.display = "block";
+    document.getElementById('icon' + sectionId.slice(-1)).classList.remove('fa-chevron-down');
+    document.getElementById('icon' + sectionId.slice(-1)).classList.add('fa-chevron-up');
+  } else {
+    section.style.display = "none";
+    document.getElementById('icon' + sectionId.slice(-1)).classList.remove('fa-chevron-up');
+    document.getElementById('icon' + sectionId.slice(-1)).classList.add('fa-chevron-down');
+  }
+}
+</script>
+
+</body>
+</html>

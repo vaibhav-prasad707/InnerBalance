@@ -1,0 +1,85 @@
+/* CSS for styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle, rgb(40, 15, 54), rgb(99, 43, 108), rgb(199, 108, 152), rgb(240, 159, 156), rgb(251, 195, 162));
+    
+  }
+  
+  header, nav, main, footer {
+    padding: 20px;
+  }
+  
+  header {
+    background-image: radial-gradient(circle, rgb(40, 15, 54), rgb(99, 43, 108), rgb(199, 108, 152), rgb(240, 159, 156), rgb(251, 195, 162));
+    background-repeat: no-repeat;
+    background-size: cover; 
+    color: #fff;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-bottom: 10px; /* Add spacing between topic buttons */
+    border: 2px solid #ccc; /* Add border around list items */
+    border-radius: 5px; /* Add rounded corners */
+  }
+  
+  nav ul li a {
+    display: block; /* Display topic buttons as block elements */
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  nav ul li a:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  footer {
+    position: relative;
+    background-image: radial-gradient(circle, rgb(40, 15, 54), rgb(99, 43, 108), rgb(199, 108, 152), rgb(240, 159, 156), rgb(251, 195, 162));
+    background-repeat: no-repeat;
+    background-size: cover; 
+    color: #fff;
+    text-align: center;
+  }
+  
+  #backButton {
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+  }
+  
+
+/* Add spacing around the arrow icon */
+nav ul li a {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space between items */
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  background-color: rgba(240, 240, 240, 0.8); /* Reduced intensity background color */
+  border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+nav ul li a:hover {
+  background-color: rgba(240, 240, 240, 0.9); /* Increased intensity on hover */
+}
+
+nav ul li a .fas {
+  margin-left: 10px; /* Add left margin to create spacing */
+}
+
+  

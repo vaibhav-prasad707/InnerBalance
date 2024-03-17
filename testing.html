@@ -1,0 +1,179 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show External Content on Button Click</title>
+<style>
+  /* CSS for styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button-container button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .button-container button:hover {
+    background-color: #45a049;
+  }
+  .content-container {
+    margin-top: 20px;
+    width: 80%;
+  }
+  .content {
+    display: none;
+    text-align: center;
+  }
+  .active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="button-container">
+  <button onclick="loadContent('http://localhost:8000/index.html')">Load Content 1</button>
+  <button onclick="loadContent('http://localhost:8000/resource_form.html')">Load Content 2</button>
+  <button onclick="loadContent('http://localhost:8000/trial.html')">Load Content 3</button>
+</div>
+
+<div class="content-container">
+  <div id="loaded-content" class="content"></div>
+</div>
+
+<script>
+  // JavaScript function to load content from HTML files
+  function loadContent(url) {
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('loaded-content').innerHTML = data;
+        document.getElementById('loaded-content').classList.add('active');
+      })
+      .catch(error => console.error('Error loading content:', error));
+  }
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Links</title>
+<style>
+  /* CSS for styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  .button-container {
+    text-align: center;
+  }
+  .button-container button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .button-container button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="button-container">
+  <button onclick="window.location.href = 'index.html'">Go to Page 1</button>
+  <button onclick="window.location.href = 'resource_form.html'">Go to Page 2</button>
+  <button onclick="window.location.href = 'trial.html'">Go to Page 3</button>
+</div>
+
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Links with Back Button</title>
+<style>
+  /* CSS for styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: radial-gradient(circle, rgb(40, 15, 54), rgb(99, 43, 108), rgb(199, 108, 152), rgb(240, 159, 156), rgb(251, 195, 162));
+  }
+  .button-container {
+    margin-bottom: 20px;
+  }
+  .button-container button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .button-container button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="button-container">
+  <button onclick="window.location.href = 'index.html'">Go to Page 1</button>
+  <button onclick="window.location.href = 'resource_form.html'">Go to Page 2</button>
+  <button onclick="window.location.href = 'trial.html'">Go to Page 3</button>
+</div>
+
+<button onclick="window.location.href = 'testing.html'">Back</button>
+
+<script>
+  // JavaScript function to navigate back
+  function goBack() {
+    window.history.back();
+  }
+</script>
+
+</body>
+</html>

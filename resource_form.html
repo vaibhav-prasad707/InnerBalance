@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resource Form</title>
+<style>
+  /* CSS for styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .submit-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Resource Form</h2>
+  <!-- Subpart 1: Basic Information -->
+  <div class="form-group">
+    <h3>Basic Information</h3>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone">
+  </div>
+
+  <!-- Subpart 2: Resource Details -->
+  <div class="form-group">
+    <h3>Resource Details</h3>
+    <label for="resource-type">Resource Type:</label>
+    <select id="resource-type" name="resource-type" required>
+      <option value="">Select Resource Type</option>
+      <option value="page1.html">Option 1</option>
+      <option value="page2.html">Option 2</option>
+      <option value="page3.html">Option 3</option>
+    </select>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4"></textarea>
+  </div>
+
+  <!-- Subpart 3: Additional Information -->
+  <div class="form-group">
+    <h3>Additional Information</h3>
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location">
+    <label for="website">Website:</label>
+    <input type="url" id="website" name="website">
+  </div>
+
+  <!-- Submit Button -->
+  <button class="submit-btn" onclick="redirectToSelectedPage()">Submit</button>
+  <button onclick="window.location.href = 'testing.html'">Back</button>
+</div>
+
+<script>
+  // JavaScript function to redirect to selected page
+  function redirectToSelectedPage() {
+    var resourceType = document.getElementById("resource-type").value;
+    if (resourceType) {
+      window.location.href = resourceType;
+    } else {
+      alert("Please select a resource type.");
+    }
+  }
+</script>
+
+</body>
+</html>
