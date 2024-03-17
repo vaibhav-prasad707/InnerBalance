@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood and Activity Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: white;">MOOD AND ACTIVITY TRACKER</h1>
+        <div class="tracker-sections">
+            <div class="mood-tracker">
+                <h2 style="text-align: center;">MOOD TRACKER</h2>
+                <div class="mood-selection">
+                    <label style="text-align: center;">How are you?</label>
+                    <div id="mood-images">
+                        <img class="mood-image" src="..\Emotions\images\happy_icon.jpg" alt="Happy" data-mood="happy">
+                        <img class="mood-image" src="..\Emotions\images\sad_icon.jpg" alt="Sad" data-mood="sad">
+                        <img class="mood-image" src="..\Emotions\images\angry_icon.jpg" alt="Angry" data-mood="angry">
+                        <img class="mood-image" src="..\Emotions\images\calm_icon.jpg" alt="Calm" data-mood="calm">
+                        <img class="mood-image" src="..\Emotions\images\anxious_icon.jpg" alt="Anxious" data-mood="anxious">
+                    </div>
+                </div>
+                <div id="total-mood-count" style="text-align: center;">Total Mood Count: 0</div>
+                
+            </div>
+            
+            <div class="activity-tracker">
+                <h2 style="text-align: center;">ACTIVITY TRACKER</h2>
+                <div class="activity-selection">
+                    <label style="text-align: center;">What did you do today?</label>
+                    <div class="activity-images">
+                        <img src="..\Emotions\images\exercise.jpg" alt="Exercise" class="activity-image" data-activity="exercise">
+                        <img src="..\Emotions\images\meditation.jpg" alt="Meditation" class="activity-image" data-activity="meditation">
+                        <img src="..\Emotions\images\reading.jpg" alt="Reading" class="activity-image" data-activity="reading">
+                        <img src="..\Emotions\images\socializing.jpg" alt="Socializing" class="activity-image" data-activity="socializing">
+                        <img src="..\Emotions\images\relaxing.jpg" alt="Relaxing" class="activity-image" data-activity="relaxing">
+                    </div>
+                </div>
+                <div id="total-activity-count" style="text-align: center;">Total Activity Count: 0</div>
+                
+            </div>
+        </div>
+        <br>
+
+        <div class="tracker-sections">
+            <div class="mood-tracker">
+                <div class="chart-container">
+                    <canvas id="mood-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="activity-tracker">
+                <div class="chart-container">
+                    <canvas id="activity-chart"></canvas>
+                </div>    
+            </div>    
+        </div>
+
+        <br>
+        
+        <div class="tracker-sections">
+            <div class="mood-tracker">
+                <div id="mood-history">
+                    <h3 style="text-align:center;">MOOD HISTORY</h3>
+                    <ul id="mood-list"></ul>
+                </div>
+            </div>
+            
+            <div class="activity-tracker">
+                <div id="activity-history">
+                    <h3 style="text-align: center;">ACTIVITY HISTORY</h3>
+                    <ul id="activity-list"></ul>
+                </div>    
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+</body>
+</html>
