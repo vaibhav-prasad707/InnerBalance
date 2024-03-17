@@ -1,0 +1,81 @@
+body{
+    background-image: radial-gradient(circle, rgb(40,15,54),rgb(99,43,108),rgb(199,108,152),rgb(240,159,156),rgb(251,195,162));
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+.tracker-sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mood-tracker, .activity-tracker {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mood-selection, .activity-selection {
+    margin-bottom: 20px;
+}
+
+.mood-selection label, .activity-selection label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#mood-images, .activity-images {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.mood-image, .activity-image {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#total-mood-count, #total-activity-count {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#mood-history, #activity-history {
+    padding: 10px;
+}
+
+#mood-history h3, #activity-history h3 {
+    margin-top: 0;
+}
+
+#mood-history ul, #activity-history ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#mood-history li, #activity-history li {
+    margin-bottom: 5px;
+}
+
+.chart-container {
+    margin-top: 20px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
