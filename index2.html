@@ -6,11 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anxiety Relief Page</title>
     <style>
+        .custom-button {
+            background: linear-gradient(45deg, cyan, lightgreen);
+            /* Gradient background */
+            color: #ffa700;
+            /* Chrome yellow text color */
+            padding: 10px 20px;
+            /* Add padding for better appearance */
+            border: none;
+            /* Remove default button border */
+            border-radius: 20px;
+            /* Add rounded corners */
+            cursor: pointer;
+            /* Change cursor to pointer on hover */
+        }
+
+        .custom-button:hover {
+            background: linear-gradient(to right, lightcyan, lightgreen);
+            /* Change gradient background on hover */
+        }
+
         body {
             font-family: "Cameo Sans", sans-serif;
             text-align: center;
             font-size: 36px;
-            background: linear-gradient(45deg, #ff7a7a, #ff77bb);
+            background: linear-gradient(45deg, #ff6565, #ff8bc5);
             /* Light red to light pink gradient */
             margin: 0;
             height: 100vh;
@@ -49,28 +69,29 @@
 <body>
 
     <div id="content">
-        <h1>Anxiety Relief Exercise</h1>
+        <h1>Let's Relieve Your Anxiety</h1>
         <p>Close your eyes and take a deep breath...</p>
     </div>
 
-    <button id="play-button" class="play-button" onclick="playAudio()"><img id="play-button-img"
-            src="C:\Users\rande\Documents\DevSoc\png-clipart-metronome-blue-play-button-icon (1).png"
-            alt="Play Button Image"></button>
-
-    <audio id="audio" src="your_audio_file.mp3"></audio>
+    <button id="play-button" class="custom-button" onclick="playAudio()">
+        <h1>Let's Relieve Your Anxiety</h1>
+        <p>Close your eyes and take a deep breath...</p>
+    </button>
+    <p></p>
+    <audio id="audio" src="C:\Users\rande\Documents\DevSoc\AnxietyInducer.mpeg"></audio>
 
     <script>
         const content = document.getElementById('content');
         const audio = document.getElementById('audio');
+        const playButton = document.getElementById('play-button');
         let iteration = 0;
 
         function playAudio() {
-            const playButton = document.getElementById('play-button');
-
             playButton.style.display = 'none'; // Hide the current play button
             content.style.display = 'block'; // Show the content
 
             // Play the audio file
+            audio.currentTime = 0; // Reset audio to the beginning
             audio.play();
 
             // Update the text content based on the audio
@@ -87,7 +108,7 @@
                     if (counter === 0) {
                         // After reaching 0
                         iteration++;
-                        content.innerHTML = "<h1>0</h1><p>Wonderful job.</p>";
+                        content.innerHTML = "<h1>0</h1><p>Wonderful job. Repeat this process if you still feel anxious.</p>";
                         setTimeout(() => {
                             counter = 10;
                             iteration = 0;
@@ -101,7 +122,7 @@
                 } else if (iteration === 2) {
                     // After 3 iterations, show new play button and extra text
                     iteration++;
-                    content.innerHTML = "<button class='play-button' onclick='playAudio()'>Play Again</button><p>Feeling better? Would you like to go again?</p>";
+                    //content.innerHTML = "<button class='play-button' onclick='playAudio()'>Play Again</button><p>Feeling better? Would you like to go again?</p>";
                 } else {
                     // Reset the iteration counter and display the new play button after 3 iterations
                     iteration = 0;
@@ -110,6 +131,16 @@
             }
 
             updateCounter(); // Start the countdown loop
+
+            // Stop audio after 33 seconds
+            setTimeout(() => {
+                audio.pause();
+                content.style.display = 'none'; // Hide the content
+                playButton.style.display = 'block'; // Show the play button
+                const newfeels = "</p>Feeling Better? If not, let's try again.</p>";
+                newfeels.style.cssText = "font-family: 'Cameo Sans', sans-serif; text-align: center; font-size: 36px;";
+                playButton.insertAdjacentHTML('afterend', newfeels); // Add additional text
+            }, 33000);
         }
     </script>
 
