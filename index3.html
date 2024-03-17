@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guided Meditation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            /* Left justification */
+            background: linear-gradient(45deg, #00cc99, #009999);
+            /* Darker cyan to darker emerald gradient */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: #e6b800;
+            /* Even darker yellow color */
+        }
+
+        .word {
+            font-size: 70px;
+            /* Huge font size */
+            border-bottom: none;
+            /* Remove underline */
+            padding-bottom: 10px;
+            margin-top: 50px;
+            /* Upper centralized position */
+            white-space: pre-line;
+            /* Each word on a new line */
+            margin-left: 5px;
+            /* 5px left margin before each word */
+        }
+
+        #instruction {
+            font-size: 35px;
+            color: #20f9c6;
+            /* White color for the text */
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            transition: opacity 0.5s;
+        }
+
+        audio {
+            display: none;
+            /* Hide default audio controls */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="word">Your<br>journey<br>to<br>InnerBalance<br>starts<br>here.</div>
+
+    <div id="instruction">Click at anytime to begin.</div>
+
+    <audio id="audio"
+        src="C:\Users\rande\Documents\DevSoc\30 Min. Deep Healing Music for The Body & Soul - Relaxing Music, Meditation Music, Inner Peace.mp3"></audio>
+
+    <script>
+        const audio = document.getElementById('audio');
+        const instruction = document.getElementById('instruction');
+
+        // Play audio whenever user clicks anywhere on the screen
+        document.body.addEventListener('click', function () {
+            if (audio.paused) {
+                audio.play();
+                instruction.style.opacity = 0;
+            } else {
+                audio.pause();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

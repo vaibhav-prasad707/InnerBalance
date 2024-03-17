@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Controlled Video Player</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            cursor: none;
+            /* Hide cursor */
+        }
+
+        #video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            /* Ensure the container hides any overflow */
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Hide the video controls */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        video::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="video-container">
+        <video id="video" src="C:\Users\rande\Documents\DevSoc\one minute 20 seconds of satisfying videos.mp4"></video>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+        const videoContainer = document.getElementById('video-container');
+        let lastSeekTime = 0;
+
+        videoContainer.addEventListener('mousemove', (e) => {
+            const currentTime = Date.now();
+            if (currentTime - lastSeekTime > 100) { // Seek at most every 100 milliseconds
+                const mouseX = e.pageX - videoContainer.offsetLeft;
+                const containerWidth = videoContainer.offsetWidth;
+                const progress = mouseX / containerWidth;
+                const duration = video.duration;
+                const seekTime = progress * duration;
+                video.currentTime = seekTime;
+                lastSeekTime = currentTime;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
