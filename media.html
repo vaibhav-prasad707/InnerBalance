@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <style>
+                body{
+            background-image: linear-gradient(to left,rgb(1,235,175), rgb(104,194,241),rgb(154,254,254));
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        .title{
+            padding: 60px;
+            font-size: 120px;
+            font-family: "Roboto",sans-serif;
+            color: rgb(24, 161, 77);
+        }
+        .InnerPeace{
+            position: absolute;
+            mix-blend-mode: luminosity;
+            margin-left: 55% ;
+            height: 400px;
+            width: 400px;
+        }
+        /* Navigation Bar Styles */
+        .navbar {
+            position: fixed; /* Fix the navbar position */
+            left: 0; /* Align to the left side */
+            top: 0; /* Align to the top */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            width: 20px; /* Width of the navbar */
+            height: 100vh; /* Full height of the viewport */
+            padding-top: 40px; /* Adjust to align items properly */
+            transition: width 0.5s; /* Add transition effect */
+            overflow: hidden; /* Hide overflow */
+        }
+        .navbar:hover {
+            width: 200px; /* Expand width on hover */
+        }
+        .nav-item {
+            padding: 20px; /* Padding for each item */
+            text-align: center; /* Center align text */
+            cursor: pointer; /* Add pointer cursor */
+            transition: background-color 0.3s; /* Add transition effect */
+        }
+        .nav-item:hover {
+            background-color: rgba(39, 208, 227, 0.5); /* Change background color on hover */
+        }
+        /* Search Bar Styles */
+        .search-bar {
+            width: 80%; /* Adjust the width of the search bar */
+            margin: 20px auto; /* Center the search bar */
+            padding: 10px; /* Add padding */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 5px; /* Add border radius */
+            transition: width 0.5s; /* Add transition effect */
+        }
+        .search-bar:focus {
+            width: 90%; /* Expand width on focus */
+        }
+        .icon{
+            mix-blend-mode: multiply;
+            height: 30px;
+            width: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <input type="text" class="search-bar" placeholder="Search...">
+        <div class="nav-item">
+            <img src="Icon1_Nav.png" alt="" class="icon">
+        </div>
+        <div class="nav-item">
+            <img src="Icon2_Nav.png" alt="" class="icon">
+        </div>
+        <div class="nav-item">
+            <img src="Icon3_nav.png" alt="" class="icon">
+        </div>
+        <div class="nav-item">
+            <img src="Icon4_Nav.png" alt="" class="icon">
+        </div>
+        <!-- Add more items as needed -->
+    </div>
+    <div class="title">
+        Media
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
