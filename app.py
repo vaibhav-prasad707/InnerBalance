@@ -1,18 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for
-import sqlite3
+from flask import Flask, render_template
 import requests
 
 app = Flask(__name__)
-db_name = 'data.db'
-
-def create_table():
-    conn = sqlite3.connect(db_name)
-    c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, name TEXT)''')
-    conn.commit()
-    conn.close()
-
-create_table()
 
 def fetch_mental_health_news(api_key):
     url = 'https://newsapi.org/v2/everything'
@@ -37,35 +26,15 @@ def fetch_mental_health_news(api_key):
 
 @app.route('/')
 def index():
-    api_key = '15f06e7f34ad42a2b6e04a133e1e302d'
+    api_key = '15f06e7f34ad42a2b6e04a133e1e302d'  # Replace with your actual API key
     news_articles = fetch_mental_health_news(api_key)
     
-    conn = sqlite3.connect(db_name)
-    c = conn.cursor()
-    c.execute('''SELECT * FROM items''')
-    items = c.fetchall()
-    conn.close()
-    
-    return render_template('mental_news.html', news_articles=news_articles, items=items)
+    if not news_articles:
+        # Handle case where news_articles is empty
+        error_message = "No news articles available."
+        return render_template('index.html', error_message=error_message)
+    else:
+        return render_template('index.html', news_articles=news_articles)
 
-@app.route('/add', methods=['POST'])
-def add_item():
-    name = request.form['name']
-    conn = sqlite3.connect(db_name)
-    c = conn.cursor()
-    c.execute('''INSERT INTO items (name) VALUES (?)''', (name,))
-    conn.commit()
-    conn.close()
-    return redirect(url_for('index'))
-
-@app.route('/delete/<int:item_id>', methods=['POST'])
-def delete_item(item_id):
-    conn = sqlite3.connect(db_name)
-    c = conn.cursor()
-    c.execute('''DELETE FROM items WHERE id = ?''', (item_id,))
-    conn.commit()
-    conn.close()
-    return redirect(url_for('index'))
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
