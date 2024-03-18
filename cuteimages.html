@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<style>
+  #image-container {
+    text-align: center;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+    <div id="categories">
+        <button onclick="showCategory('bear')">BEAR</button>
+        <button onclick="showCategory('cat')">CAT</button>
+        <button onclick="showCategory('dog')">DOG</button>
+        <button onclick="showCategory('panda')">PANDA</button>
+        <button onclick="showCategory('rabbit')">RABBIT</button>
+        <button onclick="showCategory('racoonkoala')">RACOON, KOALA BEARS</button>
+        <button onclick="showCategory('other')">OTHERS</button>
+        
+      </div>
+      
+    <div id="image-container">
+        <img src="bears.jpg" class="image" data-category="bear">
+        <img src="cats.jpg" class="image" data-category="cat">
+        <img src="dogs.jpg" class="image" data-category="dog">
+        <img src="pandas.jpg" class="image" data-category="panda">
+        <img src="rabbits.jpg" class="image" data-category="rabbit">
+        <img src="racoonkoala.jpg" class="image" data-category="racoonkoala">
+        <img src="other.jpg" class="image" data-category="other">
+    </div>
+
+
+<script>
+    function showCategory(category) {
+    var images = document.getElementsByClassName('image');
+    for (var i = 0; i < images.length; i++) {
+      if (images[i].dataset.category === category) {
+        images[i].style.display = 'block';
+      } else {
+        images[i].style.display = 'none';
+      }
+    }
+  }
+
+/*
+  var currentImageIndex = 1;
+  var totalImages = 7;
+
+  function bears() {
+    // Hide current image
+    //document.getElementById('image' + currentImageIndex).style.display = 'none';
+    document.getElementById('bear').style.display = 'block';
+  }
+
+  function cats() {
+    // Hide current image
+    //document.getElementById('image' + currentImageIndex).style.display = 'none';
+    document.getElementById('cat').style.display = 'block';
+  }
+
+  function dogs() {
+    // Hide current image
+    //document.getElementById('image' + currentImageIndex).style.display = 'none';
+    document.getElementById('dog').style.display = 'block';
+  }
+
+  function pandas() {
+    // Hide current image
+    //document.getElementById('image' + currentImageIndex).style.display = 'none';
+    document.getElementById('panda').style.display = 'block';
+  }
+
+  function rabbits() {
+    // Hide current image
+    //document.getElementById('image' + currentImageIndex).style.display = 'none';
+    document.getElementById('rabbit').style.display = 'block';
+  }
+
+  function racoonkoalas() {
+    // Hide current image
+    //document.getElementById('image' + currentImageIndex).style.display = 'none';
+    document.getElementById('racoonkoala').style.display = 'block';
+  }
+
+  function others() {
+    // Hide current image
+    //document.getElementById('image' + currentImageIndex).style.display = 'none';
+    document.getElementById('other').style.display = 'block';
+  }
+
+
+  function changeImage() {
+    // Hide current image
+    document.getElementById('image' + currentImageIndex).style.display = 'none';
+
+    // Increment current image index
+    currentImageIndex++;
+
+    // If index is greater than total images, reset it
+    if (currentImageIndex > totalImages) {
+      currentImageIndex = 1;
+    }
+
+    // Show next image
+    document.getElementById('image' + currentImageIndex).style.display = 'block';
+  }
+  */
+</script>
+</body>
+</html>
