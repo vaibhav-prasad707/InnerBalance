@@ -7,13 +7,42 @@
     <link rel="stylesheet" href="moodStyle.css">
 </head>
 <body>
+    <div class="navbar">
+        <input type="text" class="search-bar" placeholder="Search...">
+        <div class="nav-item">
+            <img src="Icon1_Nav.png" alt="" class="icon">
+            <div class="submenu">
+                <div class="submenu-item"><a href="anxiety_breathing.html">Anxiety</a></div>
+                <div class="submenu-item"><a href="images.html">Images</a></div>
+                <div class="submenu-item"><a href="ASMR.html">ASMR</a></div>
+                <div class="submenu-item"><a href="Videos.html">Videos</a></div>
+                <div class="submenu-item"><a href="guided_med.html">Meditation</a></div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="moodActivity.html">
+                <img src="Icon2_Nav.png" alt="" class="icon">
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="Journal_whiteboard.html">
+            <img src="Icon3_nav.png" alt="" class="icon">
+        </a>
+        </div>
+        <div class="nav-item">
+            <a href="resource_form.html">
+            <img src="Icon4_Nav.png" alt="" class="icon">
+        </a>
+        </div>
+        <!-- Add more items as needed -->
+    </div>
     <div class="container">
         <h1 style="color: rgb(251,195,162);">MOOD AND ACTIVITY TRACKER</h1>
         <div class="tracker-sections">
             <div class="mood-tracker">
-                <h2 style="text-align: center;">MOOD TRACKER</h2>
+                <h2 style="text-align: center; color: rgb(40,15,54);">MOOD TRACKER</h2>
                 <div class="mood-selection">
-                    <label style="text-align: center;">How are you?</label>
+                    <label style="text-align: center; color: rgb(40,15,54);">How are you?</label>
                     <div id="mood-images">
                         <img class="mood-image" src="happy_icon.jpg" alt="Happy" data-mood="happy">
                         <img class="mood-image" src="sad_icon.jpg" alt="Sad" data-mood="sad">
@@ -22,14 +51,14 @@
                         <img class="mood-image" src="anxious_icon.jpg" alt="Anxious" data-mood="anxious">
                     </div>
                 </div>
-                <div id="total-mood-count" style="text-align: center;">Total Mood Count: 0</div>
+                <div id="total-mood-count" style="text-align: center; color: rgb(40,15,54);">Total Mood Count: 0</div>
                 
             </div>
             
             <div class="activity-tracker">
-                <h2 style="text-align: center;">ACTIVITY TRACKER</h2>
+                <h2 style="text-align: center; color: rgb(40,15,54);">ACTIVITY TRACKER</h2>
                 <div class="activity-selection">
-                    <label style="text-align: center;">What did you do today?</label>
+                    <label style="text-align: center; color: rgb(40,15,54);">What did you do today?</label>
                     <div class="activity-images">
                         <img src="exercise.jpg" alt="Exercise" class="activity-image" data-activity="exercise">
                         <img src="meditation.jpg" alt="Meditation" class="activity-image" data-activity="meditation">
@@ -38,7 +67,7 @@
                         <img src="relaxing.jpg" alt="Relaxing" class="activity-image" data-activity="relaxing">
                     </div>
                 </div>
-                <div id="total-activity-count" style="text-align: center;">Total Activity Count: 0</div>
+                <div id="total-activity-count" style="text-align: center; color: rgb(40,15,54);">Total Activity Count: 0</div>
                 
             </div>
         </div>
@@ -63,14 +92,14 @@
         <div class="tracker-sections">
             <div class="mood-tracker">
                 <div id="mood-history">
-                    <h3 style="text-align:center;">MOOD HISTORY</h3>
+                    <h3 style="text-align:center; color: rgb(40,15,54);">MOOD HISTORY</h3>
                     <ul id="mood-list"></ul>
                 </div>
             </div>
             
             <div class="activity-tracker">
                 <div id="activity-history">
-                    <h3 style="text-align: center;">ACTIVITY HISTORY</h3>
+                    <h3 style="text-align: center; color: rgb(40,15,54);">ACTIVITY HISTORY</h3>
                     <ul id="activity-list"></ul>
                 </div>    
             </div>

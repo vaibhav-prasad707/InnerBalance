@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journaling and Whiteboard</title>
+    <style>
+                h1{
+            padding: 60px;
+            font-size: 70px;
+            font-family: "Roboto",sans-serif;
+            color: rgb(99,43,108);
+        }
+        body{
+            background-image: radial-gradient(circle, rgb(40,15,54),rgb(99,43,108),rgb(199,108,152),rgb(240,159,156),rgb(251,195,162));
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        .navbar {
+            position: fixed; /* Fix the navbar position */
+            left: 0; /* Align to the left side */
+            top: 0; /* Align to the top */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            width: 20px; /* Width of the navbar */
+            height: 100vh; /* Full height of the viewport */
+            padding-top: 40px; /* Adjust to align items properly */
+            transition: width 0.5s; /* Add transition effect */
+            overflow: hidden; /* Hide overflow */
+        }
+        .navbar:hover {
+            width: 200px; /* Expand width on hover */
+        }
+        .nav-item {
+            padding: 20px; /* Padding for each item */
+            text-align: center; /* Center align text */
+            cursor: pointer; /* Add pointer cursor */
+            transition: background-color 0.3s; /* Add transition effect */
+        }
+        .nav-item:hover {
+            background-color: rgba(99,43,108,0.5); /* Change background color on hover */
+        }
+        /* Search Bar Styles */
+        .search-bar {
+            width: 80%; /* Adjust the width of the search bar */
+            margin: 20px auto; /* Center the search bar */
+            padding: 10px; /* Add padding */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 5px; /* Add border radius */
+            transition: width 0.5s; /* Add transition effect */
+        }
+        .search-bar:focus {
+            width: 90%; /* Expand width on focus */
+        }
+        .icon{
+            mix-blend-mode: multiply;
+            height: 30px;
+            width: 30px;
+        }
+        .submenu {
+            display: none; /* Initially hide submenu */
+            padding-left: 20px; /* Add indentation */
+        }
+        .nav-item:hover .submenu {
+            display: block; /* Show submenu on parent hover */
+        }
+        .submenu-item {
+            padding: 10px; /* Padding for each submenu item */
+        }
+        .submenu-item:hover{
+            background-color: rgba(99,43,108,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <input type="text" class="search-bar" placeholder="Search...">
+        <div class="nav-item">
+            <img src="Icon1_Nav.png" alt="" class="icon">
+            <div class="submenu">
+                <div class="submenu-item"><a href="anxiety_breathing.html">Anxiety</a></div>
+                <div class="submenu-item"><a href="images.html">Images</a></div>
+                <div class="submenu-item"><a href="ASMR.html">ASMR</a></div>
+                <div class="submenu-item"><a href="Videos.html">Videos</a></div>
+                <div class="submenu-item"><a href="guided_med.html">Meditation</a></div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="moodActivity.html">
+                <img src="Icon2_Nav.png" alt="" class="icon">
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="Journal_whiteboard.html">
+            <img src="Icon3_nav.png" alt="" class="icon">
+        </a>
+        </div>
+        <div class="nav-item">
+            <a href="resource_form.html">
+            <img src="Icon4_Nav.png" alt="" class="icon">
+        </a>
+        </div>
+        <!-- Add more items as needed -->
+    </div>
+    <h1>Journaling<br>and<br> Whiteboard<br> Oasis</h1>
+</body>
+</html>
