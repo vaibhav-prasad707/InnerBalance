@@ -6,7 +6,7 @@
     <title>Introduction</title>
     <style>
         body{
-            background-image: linear-gradient(to left,rgb(1,235,175), rgb(104,194,241),rgb(154,254,254));
+            background-image: radial-gradient(circle, rgb(40,15,54),rgb(99,43,108),rgb(199,108,152),rgb(240,159,156),rgb(251,195,162));
             margin: 0; /* Remove default margin */
             padding: 0; /* Remove default padding */
         }
@@ -14,12 +14,13 @@
             padding: 60px;
             font-size: 120px;
             font-family: "Roboto",sans-serif;
-            color: rgb(24, 161, 77);
+            color: rgb(99,43,108);
         }
         .InnerPeace{
             position: absolute;
             mix-blend-mode: luminosity;
             margin-left: 55% ;
+            margin-top: 60px;
             height: 400px;
             width: 400px;
         }
@@ -45,7 +46,7 @@
             transition: background-color 0.3s; /* Add transition effect */
         }
         .nav-item:hover {
-            background-color: rgba(39, 208, 227, 0.5); /* Change background color on hover */
+            background-color: rgba(99,43,108,0.5); /* Change background color on hover */
         }
         /* Search Bar Styles */
         .search-bar {
@@ -66,23 +67,97 @@
             width: 30px;
         }
         .para{
-            margin-right: 50%;
-            padding: 60px;
+            margin-right: 60%;
+            padding: 70px;
             background-color: rgba(255, 255, 255, 0.5);
             border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            font-size: 20px;
+            color:rgb(40,15,54);
         }
         .description{
-            padding: 60px;
+            padding: 40px;
+            
         
         }
         .Back{
-            background-image: url("Back.png");
-            margin-left: 25%;
+            width: 450px;
+            padding: 60px;
+            height: 200px;
+            transform: rotate(90deg);
             mix-blend-mode: luminosity;
-            width: 75%;
-            float: left;
 
         }
+        .submenu {
+            display: none; /* Initially hide submenu */
+            padding-left: 20px; /* Add indentation */
+        }
+        .nav-item:hover .submenu {
+            display: block; /* Show submenu on parent hover */
+        }
+        .submenu-item {
+            padding: 10px; /* Padding for each submenu item */
+        }
+        .submenu-item:hover{
+            background-color: rgba(99,43,108,0.5);
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .column{
+            display: flex;
+            flex-grow: 1; 
+            padding: 5px;
+            border: 1px solid #ccc;
+            height: 600px;
+            padding: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgba(255, 255, 255, 0.5);
+            flex-direction: column;
+            border-radius: 20px;
+            justify-content: baseline;
+            transition: transform 0.3s;
+            margin-bottom: 50px;
+            color: white;
+            width: 200px;
+        }
+        .column:hover{
+            background-color:rgba(99,43,108,0.5);
+            transform: scale(1.05);
+        
+        }
+        .column1{
+            display: flex;
+            flex-grow: 1; 
+            padding: 5px;
+            border: 1px solid #ccc;
+            height: 400px;
+            padding: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: rgba(255, 255, 255, 0.5);
+            flex-direction: column;
+            border-radius: 20px;
+            justify-content: baseline;
+            transition: transform 0.3s;
+            margin-bottom: 50px;
+            color: white;
+            width: 200px;
+        }
+        .column1:hover{
+            background-color:rgba(99,43,108,0.5);
+            transform: scale(1.05);
+        
+        }
+        .subtitle{
+            color:rgb(240,159,156) ;
+
+        }
+
     </style>
 </head>
 <body>
@@ -90,38 +165,93 @@
         <input type="text" class="search-bar" placeholder="Search...">
         <div class="nav-item">
             <img src="Icon1_Nav.png" alt="" class="icon">
+            <div class="submenu">
+                <div class="submenu-item"><a href="index2.html">Anxiety</a></div>
+                <div class="submenu-item">Images</div>
+                <div class="submenu-item">ASMR</div>
+                <div class="submenu-item">Video</div>
+                <div class="submenu-item"><a href="index3.html">Meditation</a></div>
+            </div>
         </div>
         <div class="nav-item">
-            <img src="Icon2_Nav.png" alt="" class="icon">
+            <a href="index.html">
+                <img src="Icon2_Nav.png" alt="" class="icon">
+            </a>
         </div>
         <div class="nav-item">
             <img src="Icon3_nav.png" alt="" class="icon">
         </div>
         <div class="nav-item">
+            <a href="resource_form.html">
             <img src="Icon4_Nav.png" alt="" class="icon">
+        </a>
         </div>
         <!-- Add more items as needed -->
     </div>
     <div class="title">
         InnerBalance
     </div>
-    <img src="InnerPeace.png" alt="" class="InnerPeace">
+    <div>
+        <img src="InnerPeace.png" alt="" class="InnerPeace">
+    </div>
     <div class="description">
         <p class="para">
-            InnerBalance is an innovative project dedicated to creating a user-friendly mental health tracking tool.
-             It prioritizes careful planning, user research, and thoughtful development.
-              The project aims to understand user needs, design an intuitive interface, and select suitable technology.
-               With a focus on simplicity and effectiveness, InnerBalance seeks to empower users to track their mental well-being effortlessly. 
-               Through thorough testing and refinement, it aspires to deliver a valuable tool for promoting mental wellness in everyday life.
+            Welcome to Inner Balance, your serene sanctuary amidst the digital chaos.
+             Here, tranquility meets technology as we bring together an array of resources, all within the serene confines of a single webpage.
+              From mindfulness practices to productivity tools, wellness guides to self-care tips, Inner Balance is your compass for navigating life's ebb and flow with grace and ease.
+               Step into our virtual oasis, where harmony and clarity await at every click. 
+               Embrace the journey to inner peace and equilibrium as you explore the curated offerings designed to nourish your mind, body, and soul. 
+               Welcome to Inner Balance, where finding your center is just a scroll away.
+
         </p>
 
     </div>
     <br>
     <br>
-    <div>
+    <br><b></b>
+    <div class="container">
+        <div class="column">
+            <h1 class="subtitle">Media Haven</h1>
+            <p>
+                Welcome to the Media Haven of Inner Balance, where your senses are invited on a captivating journey of exploration and tranquility.
+                 Immerse yourself in our interactive experiences, where every click unveils a new dimension of delight and discovery.
+                  From guided meditations that soothe the soul to adorable pictures that warm the heart, our curated collection offers a sanctuary for the senses.
+                   Lose yourself in the symphony of satisfying audio experiences, carefully crafted to uplift and inspire.
+            </p>
+        </div>
+        <div class="column">
+            <h1 class="subtitle">Emotion Hub</h1>
+            <p>Welcome to the Emotion Hub of Inner Balance, where understanding and navigating your inner landscape is made effortlessly accessible. 
+                Enter a realm where emotions are honored and explored with curiosity and care. 
+                Our Mood and Event Tracker invites you to embark on a journey of self-discovery, empowering you to chart your emotional highs and lows with clarity and insight. 
+                With our intuitive dashboard, keeping track of your emotions becomes a seamless part of your daily routine, providing valuable insights into your mental and emotional well-being.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <img src="Back.png" alt="" class="Back">
     </div>
-    <div></div>
-    <div></div>
+    <br>
+    <br>
+    <div class="container">
+        <div class="column1">
+            <h1 class="subtitle">Journaling</h1>
+            <p>Welcome to the Journaling and Whiteboarding Oasis of Inner Balance, where creativity and reflection merge to unlock boundless possibilities.
+                 Step into a space where your thoughts flow freely and your ideas take shape with ease. Our journaling platform invites you to embark on a journey of self-expression and introspection, providing a canvas for your innermost thoughts, dreams, and aspirations.</p>
+        </div>
+        <div class="column1">
+            <h1 class="subtitle">Whiteboarding Oasis</h1>
+            <p>Whether you're jotting down daily reflections, sketching out plans for the future, or simply doodling to your heart's content, our whiteboarding feature offers a blank slate for your imagination to roam.
+                 With intuitive tools and endless customization options, crafting your personal narratives and brainstorming sessions has never been more engaging.</p>
+        </div>
+        <div class="column1">
+            <h1 class="subtitle">Resource Hub</h1>
+            <p>Welcome to the Resource Hub of Inner Balance, your gateway to a wealth of knowledge and inspiration. Dive into our extensive collection of written articles and video resources curated to enrich every facet of your journey towards personal growth and well-being. Whether you're seeking practical advice, insightful perspectives, or uplifting stories, our diverse range of content is here to empower and support you every step of the way.
+            </p>
+        </div>
+    </div>
+    
 </body>
 </html>
