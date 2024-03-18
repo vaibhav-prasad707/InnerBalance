@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>board</title>
+    <link rel="stylesheet" href="./styles_w.css">
+    <style>
+        #button-container {
+            text-align: center;
+            margin-top: 20px; /* Adjust as needed */
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .color-button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .pen-thickness-dropdown {
+            margin-left: 10px;
+        }
+
+        .color-picker-container {
+            display: inline-block;
+        }
+    </style>
+</head>
+<header>
+    <h1 style="color:pink">White Board</h1>
+</header>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+    <div id="button-container">
+        <button onclick="toggleDrawingMode('pen')">Pen</button>
+        <button onclick="toggleDrawingMode('eraser')">Eraser</button>
+        <button onclick="clearCanvas()">Clear All</button>
+        <div class="color-palette">
+            <div class="color-button" style="background-color: black;" onclick="changePenColor('black')"></div>
+            <div class="color-button" style="background-color: red;" onclick="changePenColor('red')"></div>
+            <div class="color-button" style="background-color: blue;" onclick="changePenColor('blue')"></div>
+            <div class="color-button" style="background-color: green;" onclick="changePenColor('green')"></div>
+            <div class="color-button" style="background-color: yellow;" onclick="changePenColor('yellow')"></div>
+            <div class="color-button" style="background-color: orange;" onclick="changePenColor('orange')"></div>
+            <div class="color-button" style="background-color: purple;" onclick="changePenColor('purple')"></div>
+            <div class="color-button" style="background-color: pink;" onclick="changePenColor('pink')"></div>
+            <!-- Add more color buttons as needed -->
+            <div class="color-picker-container">
+                <input type="color" id="pen-color-picker" onchange="changePenColor(this.value)">
+            </div>
+            <div class="pen-thickness-dropdown">
+                <select id="pen-thickness-select" onchange="changePenThickness(this.value)">
+                    <option value="3">Thin</option>
+                    <option value="7">Medium</option>
+                    <option value="12">Thick</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <p align="center">
+        <canvas id="whiteboard" margin="0" width="1100" height="500" align="right"></canvas>
+    </p>
+    <script>
+        const canvas = new fabric.Canvas('whiteboard', {
+            isDrawingMode: false
+        });
+
+        let penColor = 'black';
+        let eraserColor = 'white'; // Set default eraser color
+
+        // Function to toggle drawing mode between pen and eraser
+        function toggleDrawingMode(mode) {
+            if (mode === 'pen') {
+                canvas.isDrawingMode = true;
+                canvas.freeDrawingBrush.color = penColor; // Set pen color
+                canvas.freeDrawingBrush.width = document.getElementById('pen-thickness-select').value; // Set pen thickness
+            } else if (mode === 'eraser') {
+                canvas.isDrawingMode = true;
+                canvas.freeDrawingBrush.color = eraserColor; // Set eraser color
+                canvas.freeDrawingBrush.width = document.getElementById('pen-thickness-select').value; // Set eraser thickness
+            }
+        }
+
+        // Function to change pen color
+        function changePenColor(color) {
+            penColor = color;
+            if (canvas.isDrawingMode && !canvas.freeDrawingBrush.sourceCanvas) {
+                canvas.freeDrawingBrush.color = penColor;
+            }
+        }
+
+        // Function to change pen thickness
+        function changePenThickness(thickness) {
+            if (canvas.isDrawingMode && !canvas.freeDrawingBrush.sourceCanvas) {
+                canvas.freeDrawingBrush.width = thickness;
+            }
+        }
+
+        // Function to clear the canvas
+        function clearCanvas() {
+            canvas.clear();
+        }
+    </script>
+</body>
+</html>
