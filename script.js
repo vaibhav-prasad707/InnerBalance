@@ -1,14 +1,18 @@
-// JavaScript to toggle content visibility and icon
-function toggleContent(sectionId) {
-    var section = document.getElementById(sectionId);
-    if (section.style.display === "none") {
-      section.style.display = "block";
-      document.getElementById('icon' + sectionId.slice(-1)).classList.remove('fa-chevron-down');
-      document.getElementById('icon' + sectionId.slice(-1)).classList.add('fa-chevron-up');
-    } else {
-      section.style.display = "none";
-      document.getElementById('icon' + sectionId.slice(-1)).classList.remove('fa-chevron-up');
-      document.getElementById('icon' + sectionId.slice(-1)).classList.add('fa-chevron-down');
-    }
-  }
+document.addEventListener('DOMContentLoaded', function() {
+    const journalForm = document.getElementById('journalForm');
+    const entryInput = document.getElementById('entryInput');
+    const entriesContainer = document.getElementById('entriesContainer');
+  
+    journalForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const entryText = entryInput.value.trim();
+      if (entryText !== '') {
+        const entry = document.createElement('div');
+        entry.classList.add('entry');
+        entry.textContent = entryText;
+        entriesContainer.prepend(entry);
+        entryInput.value = '';
+      }
+    });
+  });
   
