@@ -132,7 +132,7 @@
 
             updateCounter(); // Start the countdown loop
 
-            // Stop audio after 33 seconds
+            // Stop audio after 16 seconds
             setTimeout(() => {
                 audio.pause();
                 content.style.display = 'none'; // Hide the content
@@ -140,7 +140,7 @@
                 const newfeels = "</p>Feeling Better? If not, let's try again.</p>";
                 newfeels.style.cssText = "font-family: 'Cameo Sans', sans-serif; text-align: center; font-size: 36px;";
                 playButton.insertAdjacentHTML('afterend', newfeels); // Add additional text
-            }, 33000);
+            }, 16000);
         }
     </script>
 
