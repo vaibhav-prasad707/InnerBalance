@@ -13,22 +13,201 @@
     height: 100%;
     display: none;
   }
+  h1{
+    padding: 60px;
+    font-size: 100px;
+    font-family: "Roboto",sans-serif;
+    color: rgb(99,43,108);
+  }
+  body{
+    background-image: radial-gradient(circle, rgb(40,15,54),rgb(99,43,108),rgb(199,108,152),rgb(240,159,156),rgb(251,195,162));
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  .sidebar {
+    position: fixed; /* Fix the sidebar position */
+    right: 0; /* Align to the right side */
+    top: 0; /* Align to the top */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    width: 200px; /* Width of the sidebar */
+    height: 100vh; /* Full height of the viewport */
+    padding-top: 40px; /* Adjust to align items properly */
+    transition: width 0.5s; /* Add transition effect */
+    overflow: hidden; /* Hide overflow */
+    z-index: 1; /* Ensure sidebar is above other content */
+  }
+  .sidebar:hover {
+    width: 300px; /* Expand width on hover */
+  }
+  .sidebar-item {
+    padding: 20px; /* Padding for each item */
+    text-align: center; /* Center align text */
+    cursor: pointer; /* Add pointer cursor */
+    transition: background-color 0.3s; /* Add transition effect */
+  }
+  .sidebar-item:hover {
+    background-color: rgba(99,43,108,0.5); /* Change background color on hover */
+    color: white;
+  }
+  .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-right: 250px; /* Adjust for sidebar width */
+  }
+  .column{
+    display: flex;
+    flex-grow: 1; 
+    padding: 5px;
+    border: 1px solid #ccc;
+    height: 100px;
+    padding: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    flex-direction: column;
+    border-radius: 20px;
+    justify-content: baseline;
+    transition: transform 0.3s;
+    margin-bottom: 50px;
+    color:rgb(40,15,54) ;
+    width: 200px;
+  }
+  .column:hover{
+    background-color:rgba(99,43,108,0.5);
+    transform: scale(1.05);
+    color: white;
+  }
+  .icon{
+    height: 50px;
+    width: 50px;
+  }
+  .navbar {
+            position: fixed; /* Fix the navbar position */
+            left: 0; /* Align to the left side */
+            top: 0; /* Align to the top */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            width: 20px; /* Width of the navbar */
+            height: 100vh; /* Full height of the viewport */
+            padding-top: 40px; /* Adjust to align items properly */
+            transition: width 0.5s; /* Add transition effect */
+            overflow: hidden; /* Hide overflow */
+        }
+        .navbar:hover {
+            width: 200px; /* Expand width on hover */
+        }
+        .nav-item {
+            padding: 20px; /* Padding for each item */
+            text-align: center; /* Center align text */
+            cursor: pointer; /* Add pointer cursor */
+            transition: background-color 0.3s; /* Add transition effect */
+        }
+        .nav-item:hover {
+            background-color: rgba(99,43,108,0.5); /* Change background color on hover */
+        }
+        /* Search Bar Styles */
+        .search-bar {
+            width: 80%; /* Adjust the width of the search bar */
+            margin: 20px auto; /* Center the search bar */
+            padding: 10px; /* Add padding */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 5px; /* Add border radius */
+            transition: width 0.5s; /* Add transition effect */
+        }
+        .search-bar:focus {
+            width: 90%; /* Expand width on focus */
+        }
+        .icon{
+            mix-blend-mode: multiply;
+            height: 30px;
+            width: 30px;
+        }
+        .submenu {
+            display: none; /* Initially hide submenu */
+            padding-left: 20px; /* Add indentation */
+        }
+        .nav-item:hover .submenu {
+            display: block; /* Show submenu on parent hover */
+        }
+        .submenu-item {
+            padding: 10px; /* Padding for each submenu item */
+        }
+        .submenu-item:hover{
+            background-color: rgba(99,43,108,0.5);
+        }
 </style>
 </head>
 <body>
+    <div class="navbar">
+        <input type="text" class="search-bar" placeholder="Search...">
+        <div class="nav-item">
+            <img src="Icon1_Nav.png" alt="" class="icon">
+            <div class="submenu">
+                <div class="submenu-item"><a href="anxiety_breathing.html">Anxiety</a></div>
+                <div class="submenu-item"><a href="cuteimages.html">Images</a></div>
+                <div class="submenu-item"><a href="ASMR.html">ASMR</a></div>
+                <div class="submenu-item"><a href="Videos.html">Videos</a></div>
+                <div class="submenu-item"><a href="guided_med.html">Meditation</a></div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="moodActivity.html">
+                <img src="Icon2_Nav.png" alt="" class="icon">
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="Journal_whiteboard.html">
+            <img src="Icon3_nav.png" alt="" class="icon">
+        </a>
+        </div>
+        <div class="nav-item">
+            <a href="resource_form.html">
+            <img src="Icon4_Nav.png" alt="" class="icon">
+        </a>
+        </div>
+        <!-- Add more items as needed -->
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-item">
+            <button onclick="showCategory('bear')">
+                <img src="bearicon.png" alt="" class="icon">
+            </button>
+        </div>
+        <div class="sidebar-item">
+            <button onclick="showCategory('cat')">
+                <img src="catsicon.png" alt="" class="icon">
+            </button>
+        </div>
+        <div class="sidebar-item">
+            <button onclick="showCategory('dog')">
+                <img src="dogsicon.png" alt="" class="icon">
+            </button>
+        </div>
+        <div class="sidebar-item">
+            <button onclick="showCategory('panda')">
+                <img src="Pandasicon.png" alt="" class="icon">
+            </button>
+        </div>
+        <div class="sidebar-item">
+            <button onclick="showCategory('rabbit')">
+                <img src="rabbiticon.png" alt="" class="icon">
+            </button>
+        </div>
+        <div class="sidebar-item">
+            <button onclick="showCategory('racoonkoala')">
+                <img src="racoonkoalaicon.png" alt="" class="icon">
+            </button>
+        </div>
+        <div class="sidebar-item">
+            <button onclick="showCategory('other')">Others</button>
+        </div>
+    </div>
+    
+    <h1>Images</h1>
 
-    <div id="categories">
-        <button onclick="showCategory('bear')">BEAR</button>
-        <button onclick="showCategory('cat')">CAT</button>
-        <button onclick="showCategory('dog')">DOG</button>
-        <button onclick="showCategory('panda')">PANDA</button>
-        <button onclick="showCategory('rabbit')">RABBIT</button>
-        <button onclick="showCategory('racoonkoala')">RACOON, KOALA BEARS</button>
-        <button onclick="showCategory('other')">OTHERS</button>
-        
-      </div>
-      
-    <div id="image-container">
+    <div id="image-container" class="container">
         <img src="bears.jpg" class="image" data-category="bear">
         <img src="cats.jpg" class="image" data-category="cat">
         <img src="dogs.jpg" class="image" data-category="dog">
@@ -50,70 +229,6 @@
       }
     }
   }
-
-/*
-  var currentImageIndex = 1;
-  var totalImages = 7;
-
-  function bears() {
-    // Hide current image
-    //document.getElementById('image' + currentImageIndex).style.display = 'none';
-    document.getElementById('bear').style.display = 'block';
-  }
-
-  function cats() {
-    // Hide current image
-    //document.getElementById('image' + currentImageIndex).style.display = 'none';
-    document.getElementById('cat').style.display = 'block';
-  }
-
-  function dogs() {
-    // Hide current image
-    //document.getElementById('image' + currentImageIndex).style.display = 'none';
-    document.getElementById('dog').style.display = 'block';
-  }
-
-  function pandas() {
-    // Hide current image
-    //document.getElementById('image' + currentImageIndex).style.display = 'none';
-    document.getElementById('panda').style.display = 'block';
-  }
-
-  function rabbits() {
-    // Hide current image
-    //document.getElementById('image' + currentImageIndex).style.display = 'none';
-    document.getElementById('rabbit').style.display = 'block';
-  }
-
-  function racoonkoalas() {
-    // Hide current image
-    //document.getElementById('image' + currentImageIndex).style.display = 'none';
-    document.getElementById('racoonkoala').style.display = 'block';
-  }
-
-  function others() {
-    // Hide current image
-    //document.getElementById('image' + currentImageIndex).style.display = 'none';
-    document.getElementById('other').style.display = 'block';
-  }
-
-
-  function changeImage() {
-    // Hide current image
-    document.getElementById('image' + currentImageIndex).style.display = 'none';
-
-    // Increment current image index
-    currentImageIndex++;
-
-    // If index is greater than total images, reset it
-    if (currentImageIndex > totalImages) {
-      currentImageIndex = 1;
-    }
-
-    // Show next image
-    document.getElementById('image' + currentImageIndex).style.display = 'block';
-  }
-  */
 </script>
 </body>
 </html>
